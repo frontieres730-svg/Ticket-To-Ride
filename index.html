@@ -91,7 +91,7 @@ dKeys=i=>{const d=DESTS[i],p=bfs(G,d.a,d.b)||[];return p.slice(1).map((s,j)=>{co
 pin=(s,c,n)=>GEO.P[s]?`<g transform="translate(${GEO.P[s]})"><circle r=5.5 fill="${c}" stroke=#fff stroke-width=1.6 /><text y=2 font-size=6 font-weight=700 text-anchor=middle fill=#fff>${n}</text></g>`:"";
 const hl=(n,c,f)=>GEO.L[n]?`<rect x=${GEO.L[n][0]-2} y=${GEO.L[n][1]-2} width=${GEO.L[n][2]-GEO.L[n][0]+4} height=${GEO.L[n][3]-GEO.L[n][1]+4} rx=2.5 fill="${f}" stroke="${c}" stroke-width=1.5 />`:"";
 function mapSVG(t,pend,h){let s="";
-const seen=new Set();S.teams.forEach((x,i)=>x.claims.forEach(c=>c.legs.forEach(g=>g.e.forEach(k=>{const[l,a,b]=k.split("|");[a,b].forEach(n=>{const id=i+n;if(!seen.has(id)){seen.add(id);s+=hl(n,COL[l],TC[i%8]+"99")}})}))));
+const seen=new Set();S.teams.forEach((x,i)=>x.claims.forEach(c=>c.legs.forEach(g=>g.e.forEach(k=>{const[l,a,b]=k.split("|");[a,b].forEach(n=>{const id=i+n;if(!seen.has(id)){seen.add(id);s+=hl(n,COL[l],TC[i%8]+"aa")}})}))));
 B.legs.forEach(g=>g.e.forEach(k=>{const[l,a,b]=k.split("|");[a,b].forEach(n=>s+=hl(n,"#16213e","rgba(22,33,62,.3)"))}));
 SD.forEach(i=>{[DESTS[i].a,DESTS[i].b].forEach(n=>s+=hl(n,"#d6001c","rgba(255,226,0,.6)"))});
 if(B.a)s+=hl(B.a,"#1b2a41","rgba(120,190,255,.5)");
